@@ -867,19 +867,32 @@ class StandardFiltersTest extends TestCase
 			array(
 				'',
 				array(),
+				'-'
 			),
 			array(
 				null,
 				array(),
+				'-'
 			),
 			array(
 				'two-one-three',
 				array('two', 'one', 'three'),
+				'-'
 			),
+			array(
+				'phrase',
+				array('p', 'h', 'r', 'a', 's', 'e'),
+				''
+			),
+			array(
+				'phrase',
+				array('phrase'),
+				null
+			)
 		);
 
 		foreach ($data as $item) {
-			$this->assertEquals($item[1], StandardFilters::split($item[0], '-'));
+			$this->assertEquals($item[1], StandardFilters::split($item[0], $item[2]));
 		}
 	}
 
