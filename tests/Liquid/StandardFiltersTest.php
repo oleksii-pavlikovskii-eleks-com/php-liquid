@@ -867,17 +867,14 @@ class StandardFiltersTest extends TestCase
 			array(
 				'',
 				array(),
-				'-'
 			),
 			array(
 				null,
 				array(),
-				'-'
 			),
 			array(
 				'two-one-three',
 				array('two', 'one', 'three'),
-				'-'
 			),
 			array(
 				'12301230123',
@@ -885,7 +882,7 @@ class StandardFiltersTest extends TestCase
 				'0'
 			),
 			array(
-        'phrase',
+				'phrase',
 				array('p', 'h', 'r', 'a', 's', 'e'),
 				''
 			),
