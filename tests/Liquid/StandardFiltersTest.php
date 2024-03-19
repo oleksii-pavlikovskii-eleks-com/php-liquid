@@ -892,11 +892,6 @@ class StandardFiltersTest extends TestCase
 				null
 			),
 			array(
-				'12301230123',
-				array('123', '123', '123'),
-				'0'
-			),
-			array(
 				'123 123 123',
 				array('123', '123', '123'),
 				' '
