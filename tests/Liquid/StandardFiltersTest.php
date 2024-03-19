@@ -880,7 +880,12 @@ class StandardFiltersTest extends TestCase
 				'-'
 			),
 			array(
-				'phrase',
+				'12301230123',
+				array('123', '123', '123'),
+				'0'
+			),
+			array(
+        'phrase',
 				array('p', 'h', 'r', 'a', 's', 'e'),
 				''
 			),
@@ -892,7 +897,7 @@ class StandardFiltersTest extends TestCase
 		);
 
 		foreach ($data as $item) {
-			$this->assertEquals($item[1], StandardFilters::split($item[0], $item[2]));
+			$this->assertEquals($item[1], StandardFilters::split($item[0], $item[2] ?? '-'));
 		}
 	}
 
