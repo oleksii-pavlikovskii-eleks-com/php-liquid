@@ -76,7 +76,7 @@ class AbstractBlock extends AbstractTag
 						$tagName = $tags[$tagRegexp->matches[1]];
 					} else {
 						$tagName = self::TAG_PREFIX . ucwords($tagRegexp->matches[1]);
-						$tagName = (class_exists($tagName) === true) ? $tagName : null;
+						$tagName = class_exists($tagName) ? $tagName : null;
 					}
 
 					if ($tagName !== null) {

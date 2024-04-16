@@ -86,10 +86,8 @@ class TagExtends extends AbstractTag
 				$b[$name] = [];
 			} elseif ($blockendRegexp->match($token)) {
 				$name = null;
-			} else {
-				if ($name !== null) {
-					$b[$name][] = $token;
-				}
+			} elseif ($name !== null) {
+				$b[$name][] = $token;
 			}
 		}
 
@@ -152,7 +150,7 @@ class TagExtends extends AbstractTag
 					$rest[] = $maintokens[$i];
 				}
 
-				if ($blockendRegexp->match($maintokens[$i]) && $keep === true) {
+				if ($keep && $blockendRegexp->match($maintokens[$i])) {
 					$keep = false;
 					$rest[] = $maintokens[$i];
 				}
