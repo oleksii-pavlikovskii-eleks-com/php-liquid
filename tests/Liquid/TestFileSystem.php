@@ -18,12 +18,6 @@ class TestFileSystem extends Virtual
 	/** @return TestFileSystem */
 	public static function fromArray($array)
 	{
-		return new static(function ($path) use ($array) {
-			if (isset($array[$path])) {
-				return $array[$path];
-			}
-
-			return '';
-		});
+		return new static(static fn ($path) => $array[$path] ?? '');
 	}
 }

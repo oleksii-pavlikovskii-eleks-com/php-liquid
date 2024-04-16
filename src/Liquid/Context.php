@@ -71,12 +71,7 @@ class Context
 		} else {
 			$this->environments[1] = array_filter(
 				$_SERVER,
-				function ($key) {
-					return in_array(
-						$key,
-						(array)Liquid::get('SERVER_SUPERGLOBAL_WHITELIST')
-					);
-				},
+				static fn ($key) => in_array($key, (array)Liquid::get('SERVER_SUPERGLOBAL_WHITELIST')),
 				ARRAY_FILTER_USE_KEY
 			);
 		}
