@@ -89,9 +89,7 @@ class StandardFilters
 			$strftimeFormat
 		);
 
-		$formatted = $dateTime->format($dateFormat);
-
-		return $formatted;
+		return $dateTime->format($dateFormat);
 	}
 
 
@@ -601,7 +599,7 @@ class StandardFilters
 	 */
 	public static function string($input)
 	{
-		return strval($input);
+		return (string) $input;
 	}
 
 	/**

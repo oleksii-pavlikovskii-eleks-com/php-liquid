@@ -96,8 +96,7 @@ class Decision extends AbstractBlock
 	protected function interpretCondition($left, $right, $op, Context $context)
 	{
 		if (is_null($op)) {
-			$value = $this->stringValue($context->get($left));
-			return $value;
+			return $this->stringValue($context->get($left));
 		}
 
 		// values of 'empty' have a special meaning in array comparisons

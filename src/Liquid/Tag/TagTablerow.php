@@ -148,8 +148,6 @@ class TagTablerow extends AbstractBlock
 
 		$context->pop();
 
-		$result .= "</tr>\n";
-
-		return $result;
+		return $result . "</tr>\n";
 	}
 }
