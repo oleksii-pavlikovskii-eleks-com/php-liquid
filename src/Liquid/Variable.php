@@ -58,7 +58,7 @@ class Variable
 						$filterName = $matches[0];
 						$filterArgsRegex->matchAll($filter);
 						$matches = Liquid::arrayFlatten($filterArgsRegex->matches[1]);
-						$this->filters[] = self::parseFilterExpressions($filterName, $matches);
+						$this->filters[] = $this->parseFilterExpressions($filterName, $matches);
 					}
 				}
 			}
@@ -94,7 +94,7 @@ class Variable
 	 * @param array $unparsedArgs
 	 * @return array
 	 */
-	private static function parseFilterExpressions($filterName, array $unparsedArgs)
+	private function parseFilterExpressions($filterName, array $unparsedArgs)
 	{
 		$filterArgs = [];
 		$keywordArgs = [];
