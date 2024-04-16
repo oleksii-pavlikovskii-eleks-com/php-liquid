@@ -72,7 +72,7 @@ class TagIncrement extends AbstractTag
 			$from_context = $context->get($this->toIncrement);
 
 			// we already have a value in the context
-			$context->environments[0][$this->toIncrement] = (null !== $from_context) ? $from_context : -1;
+			$context->environments[0][$this->toIncrement] = $from_context ?? -1;
 		}
 
 		// Increment the value

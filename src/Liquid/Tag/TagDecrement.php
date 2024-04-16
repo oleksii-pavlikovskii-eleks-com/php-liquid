@@ -72,7 +72,7 @@ class TagDecrement extends AbstractTag
 			$fromContext = $context->get($this->toDecrement);
 
 			// we already have a value in the context
-			$context->environments[0][$this->toDecrement] = (null !== $fromContext) ? $fromContext : 0;
+			$context->environments[0][$this->toDecrement] = $fromContext ?? 0;
 		}
 
 		// decrement the environment value

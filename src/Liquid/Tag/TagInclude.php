@@ -98,7 +98,7 @@ class TagInclude extends AbstractTag
 
 		if (isset($regex->matches[1])) {
 			$this->collection = (isset($regex->matches[3])) ? ($regex->matches[3] == "for") : null;
-			$this->variable = (isset($regex->matches[4])) ? $regex->matches[4] : null;
+			$this->variable = $regex->matches[4] ?? null;
 		}
 
 		$this->extractAttributes($markup);

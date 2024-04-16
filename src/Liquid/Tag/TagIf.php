@@ -116,9 +116,9 @@ class TagIf extends Decision
 
 				foreach ($temp as $condition) {
 					if ($conditionalRegex->match($condition)) {
-						$left = (isset($conditionalRegex->matches[1])) ? $conditionalRegex->matches[1] : null;
-						$operator = (isset($conditionalRegex->matches[2])) ? $conditionalRegex->matches[2] : null;
-						$right = (isset($conditionalRegex->matches[3])) ? $conditionalRegex->matches[3] : null;
+						$left = $conditionalRegex->matches[1] ?? null;
+						$operator = $conditionalRegex->matches[2] ?? null;
+						$right = $conditionalRegex->matches[3] ?? null;
 
 						array_push($conditions, ['left' => $left, 'operator' => $operator, 'right' => $right]);
 					} else {

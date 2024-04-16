@@ -25,11 +25,7 @@ class Local extends Cache
 	 */
 	public function read($key, $unserialize = true)
 	{
-		if (isset($this->cache[$key])) {
-			return $this->cache[$key];
-		}
-
-		return false;
+		return $this->cache[$key] ?? false;
 	}
 
 	/**

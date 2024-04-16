@@ -582,13 +582,10 @@ class StandardFilters
 		} else {
 			$first = reset($input);
 			if ($first !== false && is_array($first) && array_key_exists($property, $first)) {
-				uasort($input, function ($a, $b) use ($property) {
-					if (($a[$property] ?? 0) == ($b[$property] ?? 0)) {
-						return 0;
-					}
-
-					return ($a[$property] ?? 0) < ($b[$property] ?? 0) ? -1 : 1;
-				});
+				uasort(
+					$input,
+					static fn ($a, $b) => ($a[$property] ?? 0) <=> ($b[$property] ?? 0)
+				);
 			}
 		}
 
