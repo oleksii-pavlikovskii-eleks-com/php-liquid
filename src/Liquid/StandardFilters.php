@@ -264,7 +264,7 @@ class StandardFilters
 		if ($input instanceof \Traversable) {
 			$str = '';
 			foreach ($input as $elem) {
-				if ($str) {
+				if ($str !== '' && $str !== '0') {
 					$str .= $glue;
 				}
 				$str .= $elem;

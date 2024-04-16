@@ -125,7 +125,7 @@ class TagIf extends Decision
 						throw new ParseException("Syntax Error in tag 'if' - Valid syntax: if [condition]");
 					}
 				}
-				if (count($logicalOperators)) {
+				if (count($logicalOperators) > 0) {
 					// If statement contains and/or
 					$display = $this->interpretCondition($conditions[0]['left'], $conditions[0]['right'], $conditions[0]['operator'], $context);
 					foreach ($logicalOperators as $k => $logicalOperator) {
