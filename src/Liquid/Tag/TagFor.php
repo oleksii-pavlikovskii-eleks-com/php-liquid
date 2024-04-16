@@ -142,7 +142,7 @@ class TagFor extends AbstractBlock
 			}
 
 			$limit = (isset($this->attributes['limit'])) ? $context->get($this->attributes['limit']) : null;
-			$rangeEnd = $limit ? $limit : count($collection) - $offset;
+			$rangeEnd = $limit ?: count($collection) - $offset;
 			$range = array($offset, $rangeEnd);
 
 			$context->registers['for'][$this->name] = $rangeEnd + $offset;
