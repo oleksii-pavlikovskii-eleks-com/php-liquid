@@ -162,7 +162,7 @@ class AbstractBlock extends AbstractTag
 				: $token;
 
 			if (is_array($value)) {
-				$value = htmlspecialchars(implode($value));
+				$value = htmlspecialchars(implode('', $value));
 			}
 
 			$result .= $value;

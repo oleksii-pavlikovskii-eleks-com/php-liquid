@@ -65,7 +65,7 @@ class TagCycle extends AbstractTag
 			$this->name = $namedSyntax->matches[1];
 		} elseif ($simpleSyntax->match($markup)) {
 			$this->variables = $this->variablesFromString($markup);
-			$this->name = "'" . implode($this->variables) . "'";
+			$this->name = "'" . implode('', $this->variables) . "'";
 		} else {
 			throw new ParseException("Syntax Error in 'cycle' - Valid syntax: cycle [name :] var [, var2, var3 ...]");
 		}
