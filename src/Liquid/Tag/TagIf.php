@@ -55,7 +55,7 @@ class TagIf extends Decision
 	{
 		$this->nodelist = & $this->nodelistHolders[count($this->blocks)];
 
-		array_push($this->blocks, ['if', $markup, &$this->nodelist]);
+		$this->blocks[] = ['if', $markup, &$this->nodelist];
 
 		parent::__construct($markup, $tokens, $fileSystem);
 	}
@@ -74,7 +74,7 @@ class TagIf extends Decision
 			$this->nodelist = & $this->nodelistHolders[count($this->blocks) + 1];
 			$this->nodelistHolders[count($this->blocks) + 1] = [];
 
-			array_push($this->blocks, [$tag, $params, &$this->nodelist]);
+			$this->blocks[] = [$tag, $params, &$this->nodelist];
 		} else {
 			parent::unknownTag($tag, $params, $tokens);
 		}
@@ -120,7 +120,7 @@ class TagIf extends Decision
 						$operator = $conditionalRegex->matches[2] ?? null;
 						$right = $conditionalRegex->matches[3] ?? null;
 
-						array_push($conditions, ['left' => $left, 'operator' => $operator, 'right' => $right]);
+						$conditions[] = ['left' => $left, 'operator' => $operator, 'right' => $right];
 					} else {
 						throw new ParseException("Syntax Error in tag 'if' - Valid syntax: if [condition]");
 					}

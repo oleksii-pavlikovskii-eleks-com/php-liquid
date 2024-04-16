@@ -88,7 +88,7 @@ class TagExtends extends AbstractTag
 				$name = null;
 			} else {
 				if ($name !== null) {
-					array_push($b[$name], $token);
+					$b[$name][] = $token;
 				}
 			}
 		}
@@ -142,19 +142,19 @@ class TagExtends extends AbstractTag
 
 					if (isset($childtokens[$name])) {
 						$keep = true;
-						array_push($rest, $maintokens[$i]);
+						$rest[] = $maintokens[$i];
 						foreach ($childtokens[$name] as $item) {
-							array_push($rest, $item);
+							$rest[] = $item;
 						}
 					}
 				}
 				if (!$keep) {
-					array_push($rest, $maintokens[$i]);
+					$rest[] = $maintokens[$i];
 				}
 
 				if ($blockendRegexp->match($maintokens[$i]) && $keep === true) {
 					$keep = false;
-					array_push($rest, $maintokens[$i]);
+					$rest[] = $maintokens[$i];
 				}
 			}
 		}
