@@ -19,7 +19,7 @@ use Liquid\Exception\RenderException;
  */
 class AbstractBlock extends AbstractTag
 {
-	const TAG_PREFIX = '\Liquid\Tag\Tag';
+	private const TAG_PREFIX = '\Liquid\Tag\Tag';
 
 	/**
 	 * @var AbstractTag[]|Variable[]|string[]
