@@ -148,7 +148,7 @@ class TagCase extends Decision
 		$runElseBlock = true;
 
 		foreach ($this->nodelists as $data) {
-			list($right, $nodelist) = $data;
+			[$right, $nodelist] = $data;
 
 			foreach ($right as $var) {
 				if ($this->equalVariables($this->left, $var, $context)) {

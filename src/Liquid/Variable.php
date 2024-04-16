@@ -149,7 +149,7 @@ class Variable
 	{
 		$output = $context->get($this->name);
 		foreach ($this->filters as $filter) {
-			list($filtername, $filterArgKeys) = $filter;
+			[$filtername, $filterArgKeys] = $filter;
 
 			$filterArgValues = [];
 			$keywordArgValues = [];
