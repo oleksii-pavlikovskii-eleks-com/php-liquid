@@ -42,7 +42,7 @@ class Context
 	 *
 	 * @var array
 	 */
-	public $environments = [];
+	public $environments = [[], []];
 
 	/**
 	 * Called "sometimes" while rendering. For example to abort the execution of a rendering.
@@ -62,9 +62,6 @@ class Context
 		$this->assigns = [$assigns];
 		$this->registers = $registers;
 		$this->filterbank = new Filterbank($this);
-
-		// first empty array serves as source for overrides, e.g. as in TagDecrement
-		$this->environments = [[], []];
 
 		if (Liquid::get('EXPOSE_SERVER')) {
 			$this->environments[1] = $_SERVER;

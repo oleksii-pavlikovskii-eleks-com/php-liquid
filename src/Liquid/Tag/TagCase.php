@@ -32,14 +32,14 @@ class TagCase extends Decision
 	 *
 	 * @var array
 	 */
-	public $nodelists;
+	public $nodelists = [];
 
 	/**
 	 * The nodelist for the else (default) nodelist
 	 *
 	 * @var array
 	 */
-	public $elseNodelist;
+	public $elseNodelist = [];
 
 	/**
 	 * The left value to compare
@@ -66,9 +66,6 @@ class TagCase extends Decision
 	 */
 	public function __construct($markup, array &$tokens, FileSystem $fileSystem = null)
 	{
-		$this->nodelists = [];
-		$this->elseNodelist = [];
-
 		parent::__construct($markup, $tokens, $fileSystem);
 
 		$syntaxRegexp = new Regexp('/' . Liquid::get('QUOTED_FRAGMENT') . '/');
