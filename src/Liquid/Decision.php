@@ -152,7 +152,7 @@ class Decision extends AbstractBlock
 				return ($left <= $right);
 
 			case 'contains':
-				return is_array($left) ? in_array($right, $left) : (strpos($left, $right) !== false);
+				return is_array($left) ? in_array($right, $left) : (strpos($left, (string) $right) !== false);
 
 			default:
 				throw new RenderException("Error in tag '" . $this->name() . "' - Unknown operator $op");
