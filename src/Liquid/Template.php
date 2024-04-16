@@ -71,7 +71,7 @@ class Template
 			? new LocalFileSystem($path)
 			: null;
 
-		$this->setCache($cache);
+		static::setCache($cache);
 	}
 
 	/**

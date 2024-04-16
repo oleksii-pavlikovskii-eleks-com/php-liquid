@@ -60,7 +60,7 @@ class Variable
 						$filterName = $matches[0];
 						$filterArgsRegex->matchAll($filter);
 						$matches = Liquid::arrayFlatten($filterArgsRegex->matches[1]);
-						$this->filters[] = $this->parseFilterExpressions($filterName, $matches);
+						$this->filters[] = self::parseFilterExpressions($filterName, $matches);
 					}
 				}
 			}
