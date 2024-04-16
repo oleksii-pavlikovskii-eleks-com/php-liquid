@@ -157,11 +157,9 @@ class AbstractBlock extends AbstractTag
 		$result = '';
 
 		foreach ($list as $token) {
-			if (is_object($token) && method_exists($token, 'render')) {
-				$value = $token->render($context);
-			} else {
-				$value = $token;
-			}
+			$value = is_object($token) && method_exists($token, 'render')
+				? $token->render($context)
+				: $token;
 
 			if (is_array($value)) {
 				$value = htmlspecialchars(implode($value));

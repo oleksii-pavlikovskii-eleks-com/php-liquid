@@ -61,12 +61,7 @@ class File extends Cache
 	public function exists($key)
 	{
 		$cacheFile = $this->path . $this->prefix . $key;
-
-		if (!file_exists($cacheFile) || filemtime($cacheFile) + $this->expire < time()) {
-			return false;
-		}
-
-		return true;
+		return file_exists($cacheFile) && filemtime($cacheFile) + $this->expire >= time();
 	}
 
 	/**

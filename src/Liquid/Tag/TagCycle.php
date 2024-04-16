@@ -83,11 +83,7 @@ class TagCycle extends AbstractTag
 
 		$key = $context->get($this->name);
 
-		if (isset($context->registers['cycle'][$key])) {
-			$iteration = $context->registers['cycle'][$key];
-		} else {
-			$iteration = 0;
-		}
+		$iteration = $context->registers['cycle'][$key] ?? 0;
 
 		$result = $context->get($this->variables[$iteration]);
 

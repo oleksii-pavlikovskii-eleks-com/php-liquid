@@ -149,11 +149,7 @@ class Template
 	public function registerFilter($filter, callable $callback = null)
 	{
 		// Store callback for later use
-		if ($callback) {
-			$this->filters[] = [$filter, $callback];
-		} else {
-			$this->filters[] = $filter;
-		}
+		$this->filters[] = $callback ? [$filter, $callback] : $filter;
 	}
 
 	public function setTickFunction(callable $tickFunction)

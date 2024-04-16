@@ -187,12 +187,7 @@ class TagExtends extends AbstractTag
 		}
 
 		$source = $this->fileSystem->readTemplateFile($this->templateName);
-
-		if (Template::getCache()->exists(md5($source)) && $this->hash === md5($source)) {
-			return false;
-		}
-
-		return true;
+		return $this->hash !== md5($source) || !Template::getCache()->exists(md5($source));
 	}
 
 	/**
