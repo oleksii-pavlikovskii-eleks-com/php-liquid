@@ -662,9 +662,7 @@ class StandardFilters
 	 */
 	public static function strip_newlines($input)
 	{
-		return is_string($input) ? str_replace(array(
-			"\n", "\r"
-		), '', $input) : $input;
+		return is_string($input) ? str_replace(["\n", "\r"], '', $input) : $input;
 	}
 
 
